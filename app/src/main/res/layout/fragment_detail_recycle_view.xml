@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:padding="20dp"
+    android:background="@drawable/colla_item"
+    tools:context=".DetailFragment">
+
+    <ImageView
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/img_colla"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+
+    <TextView
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="38dp"
+        app:layout_constraintStart_toEndOf="@+id/img_colla"
+        android:textSize="38sp"
+        android:text="Colla"
+        android:id="@+id/tv_colla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/img_colla"
+        android:textStyle="italic"
+        android:textSize="28sp"
+        android:text="Colla healthy drink"
+        android:id="@+id/colla_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="#DB213979"
+        android:layout_margin="168dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colla_desc"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:text="Price"
+        android:id="@+id/colla_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
