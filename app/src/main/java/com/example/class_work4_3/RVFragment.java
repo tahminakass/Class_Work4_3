@@ -31,21 +31,39 @@ public class RVFragment extends Fragment implements OnItemClick {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loadData();
+        String item = getArguments() != null ? getArguments().getString("item_main") : "";
+        loadData(item);
         adapter = new PizzaAdapter(pizzaModel, this);
         binding.rvPizza.setAdapter(adapter);
     }
 
-    private void loadData() {
-        pizzaModel.add(new PizzaModel("Peperoni", "https://www.allrecipes.com/thmb/9UTj7kZBJDqory0cdEv_bw6Ef_0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/48727-Mikes-homemade-pizza-DDMFS-beauty-2x1-BG-2976-d5926c9253d3486bbb8a985172604291.jpg", "Peperoni good pizza", "5"));
-        pizzaModel.add(new PizzaModel("Margarita", "https://www.foodandwine.com/thmb/3kzG4PWOAgZIIfZwMBLKqoTkaGQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/margherita-pizza-with-argula-and-prosciutto-FT-RECIPE0721-04368ec288a84d2e997573aca0001d98.jpg", "Margarita good pizza", "10"));
-        pizzaModel.add(new PizzaModel("Mexico", "https://www.eatingwell.com/thmb/k3RhYf4XhAeqAejYjdInOlSOp6I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gettyimages-1124303516-36413b5bf61f45f1b7d18d90000b56b7.jpg", "Mexico good pizza", "12"));
-        pizzaModel.add(new PizzaModel("Italian", "https://recipesblob.oetker.in/assets/d8a4b00c292a43adbb9f96798e028f01/1272x764/pizza-pollo-arrostojpg.jpg", "Italian good pizza", "5"));
-        pizzaModel.add(new PizzaModel("Asian", "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/216054.jpg", "Asian ggod pizza", "6"));
-        pizzaModel.add(new PizzaModel("Cocacola", "https://www.gunz.cc/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA-%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B0/Coca-Cola-033l-%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA-1.webp?SFRXZPIM=V65ID000003232Next14_42336_rd704", "Colla healthy drink", "3"));
-        pizzaModel.add(new PizzaModel("Fanta", "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024,h_768/https://caspianfood.co.uk/wp-content/uploads/2024/01/580b57fbd9996e24bc43c10f-1-1.png", "Fanta healthy drink", "5"));
-        pizzaModel.add(new PizzaModel("Pepsi", "https://marino.ae/cdn/shop/files/Pepsi-Can-300-ml-24x300ml-_1-carton_-Marino.AE-234569456.jpg?v=1707548981&width=750", "Pepsi healthy drink", "3"));
-        pizzaModel.add(new PizzaModel("Sprite", "https://126956000.cdn6.editmysite.com/uploads/1/2/6/9/126956000/s848309795171683491_p221_i1_w1500.jpeg", "Sprite healthy drink", "3"));
+    private void loadData(String item) {
+        pizzaModel.clear();
+        if (item.equals("Pizza")) {
+            pizzaModel.add(new PizzaModel("Lady bag","https://theclosetonlineshop.com/cdn/shop/files/Diorbag14776-1_1_1445x.jpg?v=1700382700","With love","3500"));
+            pizzaModel.add(new PizzaModel("Saddle bag","https://api.platforme.com/api/compose?brand=dior&model=saddle&version=692&p=base:embroidery:m0446criwm928&initials=&size=718&logic=1&initials_profile=style::m0446criwm928&size=3000","With love","2850"));
+            pizzaModel.add(new PizzaModel("Large bag","https://cdn-iebpl.nitrocdn.com/RtEwujGzktpavtjebtLFcrvJryJvIPqr/assets/images/optimized/wp-content/uploads/2023/06/fab75cb63da68626d824e3a12fcdac55.WhatsApp_Image_2023-06-22_at_2.17.00_PM-removebg-preview.png","With love","3700"));
+            pizzaModel.add(new PizzaModel("Mini bag","https://www.dior.com/couture/ecommerce/media/catalog/product/K/9/1695127325_S0980ONMJ_M81B_E01_GHC.jpg?imwidth=3000","With love","70000"));
+
+        } else if (item.equals("Juice")) {
+            pizzaModel.add(new PizzaModel("Dress","https://www.dior.com/couture/ecommerce/media/catalog/product/h/U/1682412351_221R81A3802_X0861_E01_GHC.jpg","With love","3500"));
+            pizzaModel.add(new PizzaModel("Dress","https://images.vestiairecollective.com/images/resized/w=1246,q=75,f=auto,/produit/blue-cotton-dior-dress-42586760-1_2.jpg","With love","3500"));
+            pizzaModel.add(new PizzaModel("T-shirt","https://www.dior.com/couture/ecommerce/media/catalog/product/h/a/1618248224_143T04A4043_X0200_E01_GHC.jpg","With love","3500"));
+            pizzaModel.add(new PizzaModel("T-shirt","https://assets.christiandior.com/is/image/diorprod/154S09AM305X5801_E01?$default_GHC$&crop=379,150,1272,1360&bfc=on&qlt=85","With love","3500"));
+
+        } else if (item.equals("Dessert")) {
+            pizzaModel.add(new PizzaModel("Designer shoes","https://media.dior.com/couture/ecommerce/media/catalog/product/Q/s/1682681561_3SN272ZIR_H168_E02_GH.jpg?imwidth=3000","With love","3500"));
+            pizzaModel.add(new PizzaModel("Designer shoes","https://www.dior.com/couture/ecommerce/media/catalog/product/0/l/1719413115_3SH118YJP_H069_E03_GHC.jpg","With love","3500"));
+            pizzaModel.add(new PizzaModel("Designer shoes","https://images.stockx.com/360/Air-Jordan-1-Retro-High-Dior/Images/Air-Jordan-1-Retro-High-Dior/Lv2/img01.jpg?auto=compress&w=480&dpr=2&updated_at=1635189753&h=320&fm=webp&q=60","With love","3500"));
+            pizzaModel.add(new PizzaModel("Designer shoes","https://www.dior.com/couture/ecommerce/media/catalog/product/A/U/1713525077_1SBS11SHOI_Y38I_E02_GHC.jpg","With love","3500"));
+
+
+        }else if (item.equals("ice-cream")) {
+            pizzaModel.add(new PizzaModel("Lady hat","https://ir.ozone.ru/s3/multimedia-7/c1000/6647462215.jpg","With love","3500"));
+            pizzaModel.add(new PizzaModel("Lady hat","https://assets.christiandior.com/is/image/diorprod/483C901G6144C610_E03?$default_GHC$&crop=359,669,1214,763&bfc=on&qlt=85","With love","3500"));
+            pizzaModel.add(new PizzaModel("Lady hat","https://www.dior.com/couture/ecommerce/media/catalog/product/n/c/1683651919_34DBP924G153_C160_E01_GHC.jpg?imwidth=3000","With love","3500"));
+            pizzaModel.add(new PizzaModel("Lady hat","https://www.dior.com/couture/ecommerce/media/catalog/product/n/k/1708969164_42PDP924G180_C920_E01_GHC.jpg","With love","3500"));
+        }
     }
 
     @Override

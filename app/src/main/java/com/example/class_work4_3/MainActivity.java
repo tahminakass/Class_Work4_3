@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ct_title, new RVFragment()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ct_title, new MainFragment()).commit();
 
 
 
